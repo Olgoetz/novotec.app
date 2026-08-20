@@ -62,7 +62,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Hero />
-      <section className="container mx-auto py-16 px-4 max-w-4xl">
+      <section className="container mx-auto py-20 md:py-16 px-4 max-w-4xl">
         <h2 className="text-2xl md:text-3xl font-semibold mb-6">
           Ihr Partner für Ausbau- und Sanierungsmanagement in NRW
         </h2>

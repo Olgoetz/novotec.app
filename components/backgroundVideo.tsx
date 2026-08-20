@@ -46,7 +46,7 @@ function BackgroundVideo() {
   }, [isVisible, isMobile]);
 
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <div className="relative h-screen w-full overflow-hidden mt-20 md:mt-0">
       {/* Poster image shown immediately while video loads */}
       <img
         src="/hero.jpg"
@@ -56,7 +56,7 @@ function BackgroundVideo() {
       />
 
       {/* Video only autoplays on desktop when visible */}
-      <video
+      {/* <video
         ref={videoRef}
         muted
         loop
@@ -64,21 +64,21 @@ function BackgroundVideo() {
         preload="none"
         poster="/hero.jpg"
         className="absolute h-full w-full object-cover"
-      >
-        {/* WebM first — smaller file size, better compression */}
-        <source
+      > */}
+      {/* WebM first — smaller file size, better compression */}
+      {/* <source
           src="https://novotec-gruppe-044552942866.s3.eu-central-1.amazonaws.com/Firma+Vid+14.webm"
           type="video/webm"
-        />
-        {/* MP4 fallback */}
-        <source
+        /> */}
+      {/* MP4 fallback */}
+      {/* <source
           src="https://novotec-gruppe-044552942866.s3.eu-central-1.amazonaws.com/Firma+Vid+14.MP4"
           type="video/mp4"
-        />
-      </video>
+        /> */}
+      {/* </video> */}
 
       {/* Mobile: show play button overlay so users opt-in */}
-      {isMobile && (
+      {/* {isMobile && (
         <button
           type="button"
           aria-label="Video abspielen"
@@ -101,7 +101,7 @@ function BackgroundVideo() {
             </svg>
           </div>
         </button>
-      )}
+      )} */}
     </div>
   );
 }
