@@ -1,83 +1,130 @@
-import Image from "next/image";
 import coreCompetencies from "@/data/coreCompetencies";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
-import BackgroundVideo from "./backgroundVideo";
-import { ChevronDown } from "lucide-react";
 export const Hero = () => {
   return (
-    <div className="w-full  md:py-5  bg-transparent">
-      <section className="">
-        {/* <CrawlingText /> */}
-        <div className="absolute w-full md:w-2/3 top-1/4 left-0 z-10 text-center md:text-left text-white font-bold">
-          <div className="p-4 md:p-10 mx-2 rounded-xl bg-black/20 backdrop-blur-[2px] flex flex-col items-center justify-start gap-y-3 md:gap-y-5">
-            <h1 className="text-3xl md:text-5xl w-full drop-shadow-lg">
-              Herzlich Willkommen bei{" "}
-            </h1>
+    <section className="relative min-h-screen w-full">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/hero.jpg"
+          alt=""
+          className="h-full w-full object-cover"
+          aria-hidden="true"
+        />
+        {/* Dark overlay for better text readability - covers everything */}
+        <div className="absolute inset-0 bg-black/45" />
+      </div>
 
-            <div className="flex w-full flex-col md:flex-row items-center justify-left gap-x-4">
-              <Image
-                src="/novotec_logo_nobackground.png"
-                alt="NovoTec Logo Hero"
-                width={450}
-                height={450}
-                sizes="(max-width: 768px) 90vw, 450px"
-                priority
-                className="py-8 drop-shadow-lg"
-              />
-            </div>
-            <div className="flex flex-col justify-center text-base md:text-xl leading-8 drop-shadow-md">
-              <p>
-                Als erfahrener Qualitätsdienstleister aus dem Rheinland bieten
-                wir seit nun fast 15 Jahren erstklassige Leistungen im Ausbau-
-                und Sanierungsmanagement
-              </p>
-            </div>
+      {/* Hero Content - added more top padding to account for navbar */}
+      <div className="relative z-10 flex min-h-screen flex-col justify-center px-4 pt-40 md:pt-48 md:px-8 lg:px-16">
+        <div className="max-w-4xl">
+          {/* Main Headline */}
+          <h1 className="mb-6 text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl [text-shadow:_2px_2px_8px_rgb(0_0_0_/_60%)]">
+            Ausbau.
+            <br />
+            Sanierung.
+            <br />
+            <span className="text-red-600">Vertrauen.</span>
+          </h1>
 
-            <div className="flex flex-col md:items-start items-center justify-center w-full text-base md:text-xl leading-8 drop-shadow-md">
-              <div>
-                <p className="py-6">Unser Angebot umfasst 7 Kernkompetenzen</p>
+          {/* Red accent line */}
+          <div className="mb-6 h-1 w-16 bg-red-600 shadow-[0_2px_8px_rgba(220,38,38,0.5)]" />
 
-                <ChevronDown className="w-full" size={40} />
-              </div>
+          {/* Subtitle */}
+          <p className="mb-12 max-w-xl text-lg text-white drop-shadow-md md:text-xl">
+            Ihr erfahrener Partner für erstklassige Leistungen im Ausbau- und
+            Sanierungsmanagement.
+          </p>
+        </div>
+
+        {/* Core Competencies Card - centered, single line on desktop */}
+        <div className="mt-auto mb-6 flex w-full justify-center">
+          <div className="w-full max-w-6xl rounded-xl bg-gray-900/80 backdrop-blur-sm p-6 md:p-8">
+            <h2 className="mb-6 text-center text-sm font-semibold uppercase tracking-wider text-white">
+              Unsere Kernkompetenzen
+            </h2>
+
+            {/* Competencies in single row with vertical dividers */}
+            <div className="flex flex-wrap justify-center lg:flex-nowrap lg:items-start">
+              {coreCompetencies.map((c, index) => (
+                <div key={c.title} className="flex items-start">
+                  <Link
+                    href="/leistungen"
+                    className="group flex flex-col items-center px-3 py-2 text-center transition-transform hover:scale-105 lg:px-4 xl:px-5"
+                  >
+                    <div className="mb-3 flex h-12 w-12 lg:h-14 lg:w-14 flex-shrink-0 items-center justify-center rounded-full bg-white/10 text-white transition-colors group-hover:bg-white/20">
+                      {c.icon && <c.icon className="h-6 w-6 lg:h-7 lg:w-7" />}
+                    </div>
+                    <span className="text-[10px] lg:text-xs font-medium text-white/90 leading-tight whitespace-pre-line min-h-[2.5rem]">
+                      {c.heroTitle || c.title}
+                    </span>
+                  </Link>
+                  {/* Vertical divider - not after the last item */}
+                  {index < coreCompetencies.length - 1 && (
+                    <div className="hidden lg:block h-20 w-px bg-white/30 self-center" />
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>
-        <BackgroundVideo />
 
-        <div className="container py-20 font-semibold flex flex-col md:flex-wrap md:justify-center gap-7 mx-auto">
-          {coreCompetencies.map((c) => (
+        {/* Trust Badge & CTA */}
+        <div className="mb-12 flex flex-col  items-center gap-6 md:flex-row md:items-center md:gap-8">
+          {/* Trust Badge */}
+          <div className="flex items-center gap-4">
+            <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full bg-transparent">
+              {/* Shield outline with checkmark - matches example */}
+              <svg
+                viewBox="0 0 24 24"
+                className="h-16 w-16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                {/* Shield outline */}
+                <path
+                  d="M12 3L4 7v5c0 4.5 3.4 8.7 8 10 4.6-1.3 8-5.5 8-10V7l-8-4z"
+                  stroke="#dc2626"
+                  strokeWidth="1.5"
+                  fill="none"
+                />
+                {/* Checkmark */}
+                <path
+                  d="M8.5 12.5l2.5 2.5 4.5-5"
+                  stroke="#ffffff"
+                  strokeWidth="1.0"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fill="none"
+                />
+              </svg>
+            </div>
+            <div className="flex flex-col justify-center text-white">
+              <p className="font-semibold">15 Jahre Erfahrung.</p>
+              <p className="font-semibold">
+                Zahlreiche erfolgreich abgeschlossene Projekte.
+              </p>
+              <p className="text-sm text-white/70">
+                Qualität, auf die Sie bauen können.
+              </p>
+            </div>
+          </div>
+
+          {/* CTA Button */}
+          <div>
             <Link
-              key={c.title}
               href="/leistungen"
-              className="md:w-[calc(25%-21px)]"
+              className="inline-flex w-fit items-center gap-2 rounded-md bg-red-600 px-6 py-3 font-semibold uppercase tracking-wide text-white transition-colors hover:bg-red-700"
             >
-              <div className="h-[80px] bg-slate-100 flex items-center justify-center px-1  border rounded-md shadow-lg">
-                <div
-                  className={cn(
-                    "flex items-center justify-start ",
-                    c.containerStyles,
-                  )}
-                >
-                  {c.icon && <c.icon className={cn("mr-5", c.iconStyles1)} />}
-                  {c.image && (
-                    <c.image
-                      src="/fenster.png"
-                      alt="Fenster Icon"
-                      width={28}
-                      height={28}
-                      className="ml-[4px] mr-5"
-                    />
-                  )}
-
-                  <p>{c.title}</p>
-                </div>
-              </div>
+              Mehr erfahren
+              <ArrowRight className="h-5 w-5" />
             </Link>
-          ))}
+          </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
