@@ -1,7 +1,7 @@
 import coreCompetencies from "@/data/coreCompetencies";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 
 export const Hero = () => {
   return (
@@ -40,8 +40,8 @@ export const Hero = () => {
           </p>
         </div>
 
-        {/* Core Competencies Card - centered, single line on desktop */}
-        <div className="mt-auto mb-6 flex w-full justify-center">
+        {/* Core Competencies Card - hidden on mobile, visible on desktop */}
+        <div className="mt-auto mb-6 hidden md:flex w-full justify-center">
           <div className="w-full max-w-6xl rounded-xl bg-gray-900/80 backdrop-blur-sm p-6 md:p-8">
             <h2 className="mb-6 text-center text-sm font-semibold uppercase tracking-wider text-white">
               Unsere Kernkompetenzen
@@ -113,8 +113,17 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* CTA Button */}
-          <div>
+          {/* CTA Button - different for mobile and desktop */}
+          {/* Mobile: Arrow down to scroll to competencies */}
+          <a
+            href="#mobile-competencies"
+            className="md:hidden flex h-14 w-14 items-center justify-center rounded-full bg-red-600 text-white transition-colors hover:bg-red-700"
+            aria-label="Zu den Kernkompetenzen scrollen"
+          >
+            <ChevronDown className="h-8 w-8" />
+          </a>
+          {/* Desktop: Mehr erfahren button */}
+          <div className="hidden md:block">
             <Link
               href="/leistungen"
               className="inline-flex w-fit items-center gap-2 rounded-md bg-red-600 px-6 py-3 font-semibold uppercase tracking-wide text-white transition-colors hover:bg-red-700"
