@@ -11,7 +11,7 @@ export const Hero = () => {
         <img
           src="/hero.jpg"
           alt=""
-          className="h-full w-full object-cover object-[80%_center] md:object-center"
+          className="h-full w-full object-cover object-center"
           aria-hidden="true"
         />
         {/* Dark overlay for better text readability - covers everything */}
