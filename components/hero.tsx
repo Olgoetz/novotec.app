@@ -11,7 +11,7 @@ export const Hero = () => {
         <img
           src="/hero.jpg"
           alt=""
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover object-[80%_center] md:object-center"
           aria-hidden="true"
         />
         {/* Dark overlay for better text readability - covers everything */}
@@ -19,7 +19,7 @@ export const Hero = () => {
       </div>
 
       {/* Hero Content - added more top padding to account for navbar */}
-      <div className="relative z-10 flex min-h-screen flex-col justify-center px-4 pt-40 md:pt-48 md:px-8 lg:px-16">
+      <div className="relative z-10 flex min-h-screen flex-col justify-start pt-40 md:justify-center px-4 md:pt-48 md:px-8 lg:px-16">
         <div className="max-w-4xl">
           {/* Main Headline */}
           <h1 className="mb-6 text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl [text-shadow:_2px_2px_8px_rgb(0_0_0_/_60%)]">
