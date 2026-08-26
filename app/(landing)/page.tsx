@@ -1,4 +1,5 @@
 import { Hero } from "@/components/hero";
+import { MobileCompetencies } from "@/components/mobileCompetencies";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -62,6 +63,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Hero />
+      <MobileCompetencies />
       <section className="container mx-auto py-20 md:py-16 px-4 max-w-4xl">
         <h2 className="text-2xl md:text-3xl font-semibold mb-6">
           Ihr Partner für Ausbau- und Sanierungsmanagement in NRW
