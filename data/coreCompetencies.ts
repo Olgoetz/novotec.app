@@ -5,6 +5,7 @@ import { PiBathtub, PiSwimmingPool } from "react-icons/pi";
 const coreCompetencies: Competency[] = [
   {
     title: "Wasserschadensanierung",
+    heroTitle: "Wasserschaden-\nsanierung",
     description: [
       "• Einleitung schnellstmöglicher und schadensmindernder Maßnahmen nach einem eingetroffenen Versicherungsschaden",
       "• Sanierung von Brand- & Wasserschäden oder auch Schimmelbefall",
@@ -17,6 +18,7 @@ const coreCompetencies: Competency[] = [
   },
   {
     title: "Brandschadensanierung",
+    heroTitle: "Brandschaden-\nsanierung",
     description: [
       "• Einleitung schnellstmöglicher und schadensmindernder Maßnahmen nach einem eingetroffenen Versicherungsschaden",
       "• Sanierung von Brandschäden",
@@ -28,7 +30,7 @@ const coreCompetencies: Competency[] = [
   },
 
   {
-    title: "Energieeffiziente Sanierung",
+    title: "Energieeffiziente\nSanierung",
     description: [
       "• Energieeffiziente Sanierungen nach den Vorgaben eines individuellen Sanierungsfahrplans (iSFP), welcher zuvor durch einen Energieeffizienzberater erstellt wurde",
       "• Wärmedämmung der Außenwände, des Dachs und des Kellerbereichs",
@@ -55,23 +57,23 @@ const coreCompetencies: Competency[] = [
     iconStyles2: "h-12 w-12 md:w-[180px]",
     //  image: Image,
   },
+  // {
+  //   title: "Schwimmbeckensanierung",
+  //   description: [
+  //     "• Fachgerechte Fliesenverlegung und -reparatur",
+  //     "• Hochwertige Abdichtungsarbeiten für dauerhafte Dichtigkeit",
+  //     "• Sanierung und Erneuerung von Fliesenbelägen",
+  //     "• Einsatz langlebiger und ästhetischer Fliesenmaterialien",
+  //     "• Präzise Fugenarbeiten und Veredelungstechniken",
+  //   ],
+  //   containerStyles: "",
+  //   icon: PiSwimmingPool,
+  //   iconStyles1: "h-8 w-8 md:w-[180px]",
+  //   iconStyles2: "h-12 w-12 md:w-[180px]",
+  //   //  image: Image,
+  // },
   {
-    title: "Schwimmbeckensanierung",
-    description: [
-      "• Fachgerechte Fliesenverlegung und -reparatur",
-      "• Hochwertige Abdichtungsarbeiten für dauerhafte Dichtigkeit",
-      "• Sanierung und Erneuerung von Fliesenbelägen",
-      "• Einsatz langlebiger und ästhetischer Fliesenmaterialien",
-      "• Präzise Fugenarbeiten und Veredelungstechniken",
-    ],
-    containerStyles: "",
-    icon: PiSwimmingPool,
-    iconStyles1: "h-8 w-8 md:w-[180px]",
-    iconStyles2: "h-12 w-12 md:w-[180px]",
-    //  image: Image,
-  },
-  {
-    title: "Innen- und Dachausbauten",
+    title: "Innen- und \nDachausbauten",
     description: [
       "• Modernisierung, Sanierung und Revitalisierung von Wohn- und Gewerbeflächen",
       "• Komplette Innenausbauten",

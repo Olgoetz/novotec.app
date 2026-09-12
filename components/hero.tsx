@@ -1,132 +1,137 @@
-import NovoTec from "@/components/novotec";
-
-import Image from "next/image";
 import coreCompetencies from "@/data/coreCompetencies";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { ArrowRight, ChevronDown } from "lucide-react";
 
-import BackgroundVideo from "./backgroundVideo";
-import { ChevronDown } from "lucide-react";
 export const Hero = () => {
-  const box_style =
-    "bg-slate-800/40 flex flex-col border border-white p-5 items-center space-y-3 justify-center";
   return (
-    <div className="w-full  md:py-5  bg-transparent">
-      {/* <div className="relative min-h-screen text-white ">
-        <div className="relative text-white inset-0 animate-ken-burns  bg-blend-overlay bg-slate-200/30 min-h-screen bg-center z-10 bg-cover bg-[url(/novotec_Foto_drei_Transporter.jpg)]">
-        <h2 className="text-2xl uppercase  text-right font-semibold mb-10 border-b pb-2">
-          <NovoTec /> :: Wofür stehen wir?
-        </h2>
-
-        <Image
-          src="/novotec_Foto_drei_Transporter.jpg"
+    <section className="relative min-h-screen w-full">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/hero.jpg"
           alt=""
-          fill
-          priority
-          className="object-cover object-center  inset-0 animate-ken-burns -z-20"
+          className="h-full w-full object-cover object-center"
+          aria-hidden="true"
         />
-        <div className="absolute inset-0 bg-slate-200/20 animate-ken-burns " />
-        <div className="min-h-screen z-20 container flex items-center justify-center">
-          <div className="grid md:grid-cols-2 max-w-[1000px] gap-4 text-sm text-center">
-            <div className={box_style}>
-              <div>
-                <ThumbsUp className="text-primary-foreground" size={50} />
-              </div>
-              <h3 className="font-semibold text-lg text-white">
-                Persönlich und professionell
-              </h3>
-              <p>
-                Persönliche und professionelle Immobiliensanierungen und
-                -ausbauten im Raum Köln und ganz NRW aus einer Hand.
-              </p>
-            </div>
-            <div className={box_style}>
-              <div>
-                <Star className="text-primary-foreground" size={50} />
-              </div>
-              <h3 className="font-semibold text-lg  text-white">
-                Fachkompetenz
-              </h3>
-              <p>
-                Ihr Generalunternehmer mit Fachkompetenz in allen Gewerken für
-                erstklassige Ergebnisse.
-              </p>
-            </div>
-          </div>
+        {/* Dark overlay for better text readability - covers everything */}
+        <div className="absolute inset-0 bg-black/45" />
+      </div>
+
+      {/* Hero Content - added more top padding to account for navbar */}
+      <div className="relative z-10 flex min-h-screen flex-col justify-start pt-40 md:justify-center px-4 md:pt-48 md:px-8 lg:px-16">
+        <div className="max-w-4xl">
+          {/* Main Headline */}
+          <h1 className="mb-6 text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl [text-shadow:_2px_2px_8px_rgb(0_0_0_/_60%)]">
+            Ihre Vision.
+            <br />
+            <span className="text-red-600">Unser Handwerk.</span>
+          </h1>
+
+          {/* Red accent line */}
+          <div className="mb-6 h-1 w-16 bg-red-600 shadow-[0_2px_8px_rgba(220,38,38,0.5)]" />
+
+          {/* Subtitle */}
+          <p className="mb-12 max-w-xl text-lg text-white drop-shadow-md md:text-xl">
+            Ihr erfahrener Partner für erstklassige Leistungen im Ausbau- und
+            Sanierungsmanagement.
+          </p>
         </div>
-      </div> */}
-      <section className="">
-        {/* <CrawlingText /> */}
-        <div className="absolute w-full md:w-1/2 top-1/4 left-1 z-10 text-center md:text-left text-white font-bold">
-          <div className="p-1 md:p-8 mx-2 rounded-lg flex flex-col items-center justify-start gap-y-2 md:gap-y-4">
-            <h1 className="text-2xl md:text-5xl w-full ">
-              Herzlich Willkommen bei{" "}
-            </h1>
 
-            <div className="flex w-full flex-col md:flex-row items-center justify-left gap-x-4">
-              <Image
-                src="/novotec_logo_nobackground.png"
-                alt="NovoTec Logo Hero"
-                width={450}
-                height={450}
-                sizes="100vw"
-                priority
-                className="py-8"
-              />
-              {/* <div>
-                <h2 className="text-2xl md:text-4xl text-center md:text-left">
-                  NovoTec®
-                </h2>
-                <p className="md:text-2xl">Ausbau & Sanierungsmanagement</p>
-              </div> */}
-            </div>
-            <div className="flex flex-col justify-center text-sm md:text-lg leading-8 ">
-              <p>
-                Als erfahrener Qualitätsdienstleister aus dem Rheinland bieten
-                wir seit nun fast 15 Jahren erstklassige Leistungen im Ausbau-
-                und Sanierungsmanagement
-              </p>
-            </div>
+        {/* Core Competencies Card - hidden on mobile, visible on desktop */}
+        <div className="mt-auto mb-6 hidden md:flex w-full justify-center">
+          <div className="w-full max-w-6xl rounded-xl bg-gray-900/80 backdrop-blur-sm p-6 md:p-8">
+            <h2 className="mb-6 text-center text-sm font-semibold uppercase tracking-wider text-white">
+              Unsere Kernkompetenzen
+            </h2>
 
-            <div className="flex flex-col md:items-start items-center justify-center w-full text-sm md:text-lg leading-8 ">
-              <div>
-                <p className="py-6">Unser Angebot umfasst 8 Kernkompetenzen</p>
-
-                <ChevronDown className="w-full" size={40} />
-              </div>
-            </div>
-          </div>
-        </div>
-        <BackgroundVideo />
-
-        <div className="container py-20 font-semibold grid md:grid-cols-4 gap-7  mx-auto ">
-          {coreCompetencies.map((c) => (
-            <Link key={c.title} href="/leistungen">
-              <div className="h-[80px] bg-slate-100 flex items-center justify-center px-1  border rounded-md shadow-lg">
-                <div
-                  className={cn(
-                    "flex items-center justify-start ",
-                    c.containerStyles
+            {/* Competencies in single row with vertical dividers */}
+            <div className="flex flex-wrap justify-center lg:flex-nowrap lg:items-start">
+              {coreCompetencies.map((c, index) => (
+                <div key={c.title} className="flex items-start">
+                  <Link
+                    href="/leistungen"
+                    className="group flex flex-col items-center px-3 py-2 text-center transition-transform hover:scale-105 lg:px-4 xl:px-5"
+                  >
+                    <div className="mb-3 flex h-12 w-12 lg:h-14 lg:w-14 flex-shrink-0 items-center justify-center rounded-full bg-white/10 text-white transition-colors group-hover:bg-white/20">
+                      {c.icon && <c.icon className="h-6 w-6 lg:h-7 lg:w-7" />}
+                    </div>
+                    <span className="text-[10px] lg:text-xs font-medium text-white/90 leading-tight whitespace-pre-line min-h-[2.5rem]">
+                      {c.heroTitle || c.title}
+                    </span>
+                  </Link>
+                  {/* Vertical divider - not after the last item */}
+                  {index < coreCompetencies.length - 1 && (
+                    <div className="hidden lg:block h-20 w-px bg-white/30 self-center" />
                   )}
-                >
-                  {c.icon && <c.icon className={cn("mr-5", c.iconStyles1)} />}
-                  {c.image && (
-                    <c.image
-                      src="/fenster.png"
-                      alt="Fenster Icon"
-                      width={28}
-                      height={28}
-                      className="ml-[4px] mr-5"
-                    />
-                  )}
-
-                  <p>{c.title}</p>
                 </div>
-              </div>
-            </Link>
-          ))}
+              ))}
+            </div>
+          </div>
         </div>
-      </section>
-    </div>
+
+        {/* Trust Badge & CTA */}
+        <div className="mb-12 flex flex-col  items-center gap-6 md:flex-row md:items-center md:gap-8">
+          {/* Trust Badge */}
+          <div className="flex items-center gap-4">
+            <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full bg-transparent">
+              {/* Shield outline with checkmark - matches example */}
+              <svg
+                viewBox="0 0 24 24"
+                className="h-16 w-16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                {/* Shield outline */}
+                <path
+                  d="M12 3L4 7v5c0 4.5 3.4 8.7 8 10 4.6-1.3 8-5.5 8-10V7l-8-4z"
+                  stroke="#dc2626"
+                  strokeWidth="1.5"
+                  fill="none"
+                />
+                {/* Checkmark */}
+                <path
+                  d="M8.5 12.5l2.5 2.5 4.5-5"
+                  stroke="#ffffff"
+                  strokeWidth="1.0"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fill="none"
+                />
+              </svg>
+            </div>
+            <div className="flex flex-col justify-center text-white">
+              <p className="font-semibold">15 Jahre Erfahrung.</p>
+              <p className="font-semibold">
+                Zahlreiche erfolgreich abgeschlossene Projekte.
+              </p>
+              <p className="text-sm text-white/70">
+                Qualität, auf die Sie bauen können.
+              </p>
+            </div>
+          </div>
+
+          {/* CTA Button - different for mobile and desktop */}
+          {/* Mobile: Arrow down to scroll to competencies */}
+          <a
+            href="#mobile-competencies"
+            className="md:hidden flex h-14 w-14 items-center justify-center rounded-full bg-red-600 text-white transition-colors hover:bg-red-700"
+            aria-label="Zu den Kernkompetenzen scrollen"
+          >
+            <ChevronDown className="h-8 w-8" />
+          </a>
+          {/* Desktop: Mehr erfahren button */}
+          <div className="hidden md:block">
+            <Link
+              href="/leistungen"
+              className="inline-flex w-fit items-center gap-2 rounded-md bg-red-600 px-6 py-3 font-semibold uppercase tracking-wide text-white transition-colors hover:bg-red-700"
+            >
+              Mehr erfahren
+              <ArrowRight className="h-5 w-5" />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };

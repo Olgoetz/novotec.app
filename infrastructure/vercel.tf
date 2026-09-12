@@ -1,13 +1,20 @@
 
 resource "vercel_project" "novotec" {
-  name                       = "novotec"
-  framework                  = "nextjs"
-  serverless_function_region = "fra1"
+  name      = "novotec"
+  framework = "nextjs"
+  resource_config = {
+    function_default_region = "fra1"
+  }
   git_repository = {
     type              = "github"
-    repo              = github_repository.novotec.full_name
-    production_branch = "prod"
-
+    repo              = "Olgoetz/NovoTec"
+    production_branch = "main"
+    deploy_hooks      = []
+  }
+  automatically_expose_system_environment_variables = true
+  git_comments = {
+    on_pull_request = false
+    on_commit       = false
   }
   vercel_authentication = {
     deployment_type = "none"
@@ -31,7 +38,7 @@ locals {
   env_variables_all = {
 
     NEXT_PUBLIC_GOOGLE_MAPS_API_KEY = var.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
-    GOOGLE_TAG_MANAGER_ID           = var.GOOGLE_TAG_MANAGER_ID
+    GOOGLE_ANALYTICS_TAG            = var.GOOGLE_ANALYTICS_TAG
     CONTENTFUL_SPACE_ID             = var.CONTENTFUL_SPACE_ID
     CONTENTFUL_ENVIRONMENT          = var.CONTENTFUL_ENVIRONMENT
     CONTENTFUL_ACCESS_TOKEN         = var.CONTENTFUL_ACCESS_TOKEN

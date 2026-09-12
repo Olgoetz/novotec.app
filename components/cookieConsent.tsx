@@ -45,7 +45,7 @@ const CookieConsentComponent = () => {
       <CookieConsent
         location="bottom"
         buttonText="Zustimmen und fortfahren"
-        declineButtonText="Nur mit technisch notwendigen Cookies forfahren"
+        declineButtonText="Nur mit technisch notwendigen Cookies fortfahren"
         enableDeclineButton
         onAccept={handleAccept}
         onDecline={handleDecline}
@@ -55,6 +55,8 @@ const CookieConsentComponent = () => {
           borderRadius: "4px",
           fontWeight: "bold",
           padding: "10px 20px",
+          fontSize: "14px",
+          width: "100%",
         }}
         declineButtonStyle={{
           backgroundColor: "transparent",
@@ -64,32 +66,35 @@ const CookieConsentComponent = () => {
           borderColor: "white",
           border: "1px solid",
           padding: "10px 20px",
+          fontSize: "14px",
+          width: "100%",
         }}
         style={{
           background: "black",
           color: "#fff",
           borderTop: "1px solid #E5E7EB",
+          padding: "16px",
         }}
         contentStyle={{
           display: "flex",
-          flex: "none",
+          flex: "1 1 auto",
           flexDirection: "column",
-          alignItems: "end",
+          alignItems: "start",
           justifyContent: "center",
           margin: 0,
-          padding: "10px",
+          padding: "0",
         }}
         contentClasses=""
-        buttonWrapperClasses="flex flex-row items-start gap-4 justify-start"
-        containerClasses="flex flex-col p-4"
+        buttonWrapperClasses="flex flex-col md:flex-row items-stretch md:items-center gap-3 w-full md:w-auto mt-4 md:mt-0"
+        containerClasses="flex flex-col md:flex-row items-start md:items-center gap-4 p-4 max-w-7xl mx-auto"
       >
-        <div className="p-4">
+        <div className="text-sm md:text-base leading-relaxed">
           Wir verwenden Cookies und ähnliche Technologien, um bestimmte
           Funktionen bereitzustellen, die Benutzerfreundlichkeit zu verbessern
           und Inhalte zu liefern, die für Ihre Interessen relevant sind. Je nach
           Zweck können neben technisch notwendigen Cookies auch Analyse- und
-          Marketing-Cookies verwendet werden. Durch Klicken auf &quot; Zustimmen
-          und fortfahren &quot; erklären Sie Ihr Einverständnis mit der
+          Marketing-Cookies verwendet werden. Durch Klicken auf &quot;Zustimmen
+          und fortfahren&quot; erklären Sie Ihr Einverständnis mit der
           Verwendung der vorgenannten Cookies. Weitere Informationen finden Sie
           in unserer{" "}
           <a className="text-novo-red underline" href="/datenschutz">

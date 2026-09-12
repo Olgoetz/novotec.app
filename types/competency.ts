@@ -1,5 +1,6 @@
 export type Competency = {
   title: string;
+  heroTitle?: string;
   description: string[];
   externalLink?: string;
   containerStyles: string;
