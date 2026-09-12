@@ -71,7 +71,7 @@ export const Hero = () => {
         </div>
 
         {/* Trust Badge & CTA */}
-        <div className="mb-12 flex flex-col  items-center gap-6 md:flex-row md:items-center md:gap-8">
+        <div className="mt-auto pb-10 md:pb-0 md:mb-12 flex flex-col items-center gap-6 md:flex-row md:items-center md:gap-8">
           {/* Trust Badge */}
           <div className="flex items-center gap-4">
             <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full bg-transparent">
