@@ -23,11 +23,9 @@ export const Hero = () => {
         <div className="max-w-4xl">
           {/* Main Headline */}
           <h1 className="mb-6 text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl [text-shadow:_2px_2px_8px_rgb(0_0_0_/_60%)]">
-            Ausbau.
+            Ihre Vision.
             <br />
-            Sanierung.
-            <br />
-            <span className="text-red-600">Vertrauen.</span>
+            <span className="text-red-600">Unser Handwerk.</span>
           </h1>
 
           {/* Red accent line */}

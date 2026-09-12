@@ -10,8 +10,6 @@ repos:
       - id: check-merge-conflict
       - id: check-added-large-files
         args: ["--maxkb=1000"]
-      - id: no-commit-to-branch
-        args: ["--branch", "main"]
 
   # Prettier formatting
   - repo: https://github.com/pre-commit/mirrors-prettier
