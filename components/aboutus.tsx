@@ -27,17 +27,18 @@ const AboutUs = () => {
               Planung, Durchführung und Steuerung von Bauprojekten.
             </p>
             <p className="mt-5">
-              Das Ziel von NovoTec ist, den nächsten großen strategischen
-              Schritt nach vorne zu unternehmen, kontinuierliches Wachstum zu
-              erzielen und unseren Gesamtumsatz bis 2025 zu verdoppeln. Dabei
-              legen wir großen Wert darauf, sowohl die Digitalisierung als auch
-              die Nachhaltigkeit fest in unsere Wachstumsstrategie zu
-              integrieren und den bedeutenden Zukunftsmarkt des klima- und
-              ressourcenschonenden Bauens zu fördern. Gemeinsam mit unserem
-              hochmotivierten Team möchten wir einen stetig wachsenden Beitrag
-              zur Erreichung der Klimaziele leisten und die Immobilieneigentümer
-              in der Umsetzung der Energieeffizienz ihrer Gebäude entschlossen
-              unterstützen.
+              Das Ziel von NovoTec ist es, mit handwerklicher Qualität und klar
+              strukturierten Prozessen nachhaltig und verlässlich zu wachsen.
+            </p>
+            <p className="mt-5">
+              Dafür bauen wir unser Managementsystem nach den internationalen
+              Normen ISO 9001 (Qualitätsmanagement), ISO 14001
+              (Umweltmanagement) und ISO 45001 (Arbeits- und Gesundheitsschutz)
+              aus. Die Zertifizierung streben wir noch in diesem Jahr an.
+              Standardisierte Abläufe und konsequente Qualitätskontrollen helfen
+              uns, Fehlerquoten zu minimieren und Nacharbeiten zu vermeiden.
+              Zugleich schonen wir Umwelt und Ressourcen und sorgen für ein
+              sicheres Arbeitsumfeld.
             </p>
             <p className="mt-5">
               Zusätzlich fungiert Thomas Jaworski auch als Geschäftsführer der
